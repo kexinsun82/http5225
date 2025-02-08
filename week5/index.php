@@ -19,9 +19,22 @@
   $query = "SELECT * FROM colors";
   $colors = mysqli_query($connect, $query);
 
-  // echo '<pre>' . print_r($colors) . '</pre>';
-  echo "<div style = "background-color: '. $colors['Hex'] .'">""</div>"
+  // Fetch all
+  // mysqli_fetch_all($colors, MYSQLI_ASSOC);
 
+  // Associative array
+  // $row = mysqli_fetch_assoc($colors);
+
+  // while Loop
+  while ($row = mysqli_fetch_assoc($colors)) {
+    echo '<div style="background-color: '. $row["Hex"] .'; line-height: 120px; text-align: center; font-size: 20px;">' 
+    . $row["Name"] .
+    '</div>';
+  }
+
+  // echo '<pre>' . print_r($colors, true) . '</pre>';
+  // echo "<div style = "background-color: '. $colors['Hex'] .'">""</div>"
+  mysqli_close($connect);
 ?>
   
 </body>
