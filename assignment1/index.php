@@ -29,24 +29,32 @@
         $foods = mysqli_query($connect, $query);
 
         foreach ($foods as $food) {
-          $encrypted_food = base64_encode($food['food_item']);
-
           echo '<div class="col-md-4">
-                <div class="card mb-4 shadow">
-                  <div class="card-body">
-                    <h5 class="card-title text-primary">' . $food['food_item'] . '</h5>
-                    <span class="badge bg-info">' . $food['category_name'] . '</span>
-                    <p class="mt-2">
-                      <strong>Calories:</strong> ' . $food['calories'] . ' kcal<br>
-                      <strong>Protein:</strong> ' . $food['protein'] . ' g<br>
-                      <strong>Fat:</strong> ' . $food['fat'] . ' g<br>
-                      <strong>Carbs:</strong> ' . $food['carbohydrates'] . ' g<br>
-                      <strong>Sugars:</strong> ' . $food['sugars'] . ' g
-                    </p>
+                  <div class="card mb-4 shadow">
+                    <div class="card-body">
+                      <h2 class="card-title text-primary fs-4">' . $food['food_item'] . '</h2>
+                      <span class="badge bg-info">' . $food['category_name'] . '</span>
+                      <ul class="list-group mt-3">
+                        <li class="list-group-item list-group-item-primary">
+                          <span class="fw-bold">Calories:</span> ' . $food['calories'] . ' kcal
+                        </li>
+                        <li class="list-group-item list-group-item-success">
+                          <span class="fw-bold">Protein:</span> ' . $food['protein'] . ' g
+                        </li>
+                        <li class="list-group-item list-group-item-warning">
+                          <span class="fw-bold">Fat:</span> ' . $food['fat'] . ' g
+                        </li>
+                        <li class="list-group-item list-group-item-info">
+                          <span class="fw-bold">Carbs:</span> ' . $food['carbohydrates'] . ' g
+                        </li>
+                        <li class="list-group-item list-group-item-danger">
+                          <span class="fw-bold">Sugars:</span> ' . $food['sugars'] . ' g
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </div>';
-        }
+                </div>';
+      }
     ?>
     </div>
   </div>
