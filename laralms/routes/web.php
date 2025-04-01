@@ -7,9 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/students', function () {
-    return view('students.index');
-});
+// Route::get('/students', function () {
+//     return view('students.index');
+// });
 
 
 Route::resource('students', StudentController::class);
