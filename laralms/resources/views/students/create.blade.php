@@ -12,9 +12,9 @@
         <input type="text" name="lname" placeholder="lname" value="{{ old('lname') }}">
         <input type="email" name="email" placeholder="email" value="{{ old('email') }}">
 
-        <select name="" id="">
+        <select name="course" id="course">
             @foreach ($courses as $course )
-                <option value="">{{ $course -> name }}</option>
+                <option value="{{ $course -> id}}">{{ $course -> name }}</option>
             @endforeach
         </select>
 

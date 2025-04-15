@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Course;
+use App\Models\Student;
 
 class CourseController extends Controller
 {
@@ -37,7 +38,9 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        $course = Course::find($course->id);
+        $students = $course -> students;
+        //dd($students);
     }
 
     /**

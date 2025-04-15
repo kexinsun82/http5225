@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('email');
+            $table->foreignId('course_id');
             $table->timestamps();
         });
     }
